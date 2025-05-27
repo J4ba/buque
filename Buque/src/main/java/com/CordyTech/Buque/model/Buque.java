@@ -4,8 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,9 +28,9 @@ public class Buque {
     private float eslora;
 
     @Column(nullable = false)
-    private LocalDate fechaLlegada;
+    private Date fechaLlegada;
 
     @Column(nullable = false)
-    private LocalDateTime fechaPartida;
+    private Date fechaPartida;
 }
 
