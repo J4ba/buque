@@ -16,8 +16,9 @@ public class BuqueController {
     private BuqueService buqueService;
 
     @PostMapping
-    public Buque createBuque(@RequestBody Buque buque) {
-        return buqueService.saveBuque(buque);
+    public ResponseEntity<Buque> createBuque(@RequestBody Buque buque) {
+        Buque nuevoBuque = buqueService.saveBuque(buque);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nuevoBuque);
     }
 
     @GetMapping
