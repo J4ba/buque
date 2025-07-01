@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Date;
 import java.util.Optional;
 
 @Service
@@ -33,5 +34,18 @@ public class BuqueService {
     public void deleteBuque(String codBuque) {
         buqueRepository.deleteById(codBuque);
     }
+
+    public Optional<Buque> obtenerBuquePorNombre(String nombreBuque) {
+        return buqueRepository.findByNombreBuque(nombreBuque);
+    }
+
+    public Optional<Buque> obtenerPorHoraLlegada(Date fecha){
+        return buqueRepository.findByFechaLlegada(fecha);
+    }
+
+    public void setBuqueRepository(BuqueRepository repo) {
+        this.buqueRepository = repo;
+    }
+
 }
 

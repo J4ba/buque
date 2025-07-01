@@ -6,12 +6,13 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface BuqueRepository extends JpaRepository<Buque, String> {
 
-    List<Buque> findByNombreBuqueContainingIgnoreCase(String nombre);
+    Optional<Buque> findByNombreBuque(String nombreBuque);
 
-    List<Buque> findByFechaLlegadaBefore(Date fecha);
+    Optional<Buque> findByFechaLlegada(Date fecha);
 
 }
